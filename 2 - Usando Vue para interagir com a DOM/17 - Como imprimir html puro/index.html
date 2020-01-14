@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-once> {{titulo}}</p> <br>
+        {{saudacao()}} <br>
+        <p v-html="linkHTML">{{linkHTML}}</p>
+        <a v-bind:href='link'> Google</a >
+    </div>    
+
+    <script>
+     new Vue({
+         el: "#app",
+         data:{
+            titulo: "Ola mundo",
+            link: 'http://google.com',
+            linkHTML: '<a href="http://google.com">Google html</a>'
+         },
+
+         methods:{
+            saudacao: function(event){
+                this.titulo = 'Bom dia'
+                return this.titulo
+            }
+         }
+     })    
+    </script>
+</body>
+</html>
