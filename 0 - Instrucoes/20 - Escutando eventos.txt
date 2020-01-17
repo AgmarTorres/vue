@@ -1,0 +1,11 @@
+CRTL+ D  em titulo para contador
+
+criar um botao, vai somar 1
+
+cria um metodo dentro de methods: somar
+
+	somar(){
+		this.contador++	
+	}
+
+button v-on:click="somar"

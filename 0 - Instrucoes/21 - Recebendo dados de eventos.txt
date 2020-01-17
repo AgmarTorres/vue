@@ -1,0 +1,20 @@
+Evento è passado por qualquer funcao do js
+
+	mouseMove, onClick
+
+Duplica o evento 2
+
+ <p v-on:mousemove="atualizarXY">{{x}} e {{y}}</p>
+        
+
+data: 
+	x: 0,
+        y: 0
+
+
+methods:{
+	 atualizarXY(event){
+                this.x = event.clientX
+                this.y = event.clientY  
+         }            
+        

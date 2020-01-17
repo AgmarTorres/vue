@@ -1,0 +1,2 @@
+//Resolve o valor em apenas um vez, o valor nao se altera mais
+<p v-once> {{titulo}} </p>

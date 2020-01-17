@@ -1,0 +1,12 @@
+criar em data um link completo
+
+	data{ 
+		linkHTML: ' <a href="http://google.com"> Google html </a>'
+
+	}
+
+no html
+
+<hr>
+
+<p v-html="linkHTMl">   </p>
