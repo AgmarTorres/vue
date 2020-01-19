@@ -1,0 +1,66 @@
+o evento 'e passado quando voce nao retorna aboslutamente nada, mas ele pode ser especifico
+
+Passar o valor um valor especifico
+
+<button> v-on:click= "somar(5, $event)"
+pode trocar a ordem
+
+
+
+methods: {
+	somar: function(passo, event) 
+		this += passo
+}
+
+
+$event forca a passagem de parametro
+
+
+==========================================================================================
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <br>
+        <p > {{contador}}</p>    <br>
+        <p v-on:mousemove="atualizarXY">{{x}} e {{y}}</p>
+        
+        <br><br>
+        
+        <button v-on:click="soma"> Somar +1</button>
+        <button v-on:click="somar($event, 5)"> SOmar + 5</button>
+    
+    </div>    
+
+    <script>
+     new Vue({
+         el: "#app",
+         data:{
+            contador: 0,
+            x: 0,
+            y:0
+         },
+         methods:{
+            soma(){
+                this.contador++
+            },
+            somar(event, passo){
+                this.contador += passo
+            },
+            atualizarXY(event){
+                this.x = event.clientX
+                this.y = event.clientY
+            }            
+         }
+     })    
+    </script>
+</body>
+</html>

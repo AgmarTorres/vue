@@ -1,0 +1,3 @@
+
+Previne o comportamento, para os itens java script, no caso, não navega para o google
+    <a v-on:click.prevent href="http://google.com"> Google</a>

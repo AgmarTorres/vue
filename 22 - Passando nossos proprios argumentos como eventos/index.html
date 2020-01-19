@@ -13,28 +13,33 @@
         <p > {{contador}}</p>    <br>
         <p v-on:mousemove="atualizarXY">{{x}} e {{y}}</p>
         
-        <br><br>
+        <br>
         
-        <button v-on:click="somar"> Somar +1</button>
+        <button v-on:click="soma"> Somar +1</button>
+        <button v-on:click="somar($event, 5)"> SOmar + 5</button>
+    
     </div>    
 
     <script>
      new Vue({
          el: "#app",
          data:{
-            contador: '0',
+            contador: 0,
             x: 0,
             y:0
          },
          methods:{
-            somar(){
+            soma(){
                 this.contador++
             },
-                atualizarXY(event){
-                    this.x = event.clientX
-                    this.y = event.clientY  
-                }            
-            }
+            somar(event, passo){
+                this.contador += passo
+            },
+            atualizarXY(event){
+                this.x = event.clientX
+                this.y = event.clientY
+            }            
+         }
      })    
     </script>
 </body>

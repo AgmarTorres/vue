@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+    
+        <br>
+        <p > {{contador}}</p>    <br>
+        <p v-on:mousemove="atualizarXY"> Mouse: {{x}} e {{y}}
+            <span v-on:mousemove = "pararaqui"> Parar Aqui</span>
+            <span v-on:mousemove.stop = "pararaqui"> Parar Aqui</span>
+        </p>
+        <br><br>
+        <button v-on:click="soma"> Somar +1</button><br><br>
+        <button v-on:click="somar($event, 5)"> SOmar + 5</button>
+        <br><br>
+        <a v-on:click.prevent  href="http://google.com"> Google</a>
+        <br><br>
+        <a v-on:click="naoNavegar"  href="http://google.com"> Google nao navegar</a>
+    
+    </div>    
+
+    <script>
+     new Vue({
+         el: "#app",
+         data:{
+            contador: 0,
+            x: 0,
+            y:0
+         },
+         methods:{
+            soma(){
+                this.contador++
+            },
+            somar(event, passo){
+                this.contador += passo
+            },
+            atualizarXY(event){
+                this.x = event.clientX
+                this.y = event.clientY
+            },
+            pararaqui:function(event){
+                event.stopPropagation()
+            },
+
+            naoNavegar(event){
+                event.preventDefault()
+            }
+         }
+     })    
+    </script>
+</body>
+</html>
